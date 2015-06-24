@@ -2,7 +2,7 @@ package com.crazertz.saber;
 
 import com.crazertz.saber.display.Display;
 
-public class Game 
+public class Game implements Runnable
 {
 	private Display display;
 	private int width;
@@ -14,6 +14,12 @@ public class Game
 		this.height = height;
 		
 		display = new Display(title, width, height);
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
