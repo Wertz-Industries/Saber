@@ -14,12 +14,17 @@ public class Saber
 		}
 		
 		
-		public static void main(String[]args) 
+		public static void main(String[]args) throws InterruptedException 
 		{
-			print("Wellcom to Saber");
-			while(10 < 20)
+			
+			print("Welcome to Saber");
+			
+			while (true)
 			{
+				
 				print("happy");
+				Thread.sleep(1000);
+
 			}
 		}
 				
