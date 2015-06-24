@@ -70,6 +70,7 @@ public class Game implements Runnable
 	
 	public synchronized void stop()
 	{
+		// TODO: Fix this ...
 		if(running)
 			return;
 		running = false;
