@@ -4,7 +4,7 @@ import java.awt.Canvas;
 import java.awt.Dimension;
 
 import javax.swing.JFrame;
-
+import java.awt.Color;
 public class Display 
 {
 	private JFrame frame;
@@ -31,7 +31,7 @@ public class Display
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
-		
+		frame.setAlwaysOnTop(true);
 		frame.setVisible(true);
 		
 		canvas = new Canvas();
