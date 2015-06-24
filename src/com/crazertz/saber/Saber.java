@@ -1,6 +1,5 @@
 package com.crazertz.saber;
 
-import com.crazertz.saber.display.Display;
 
 public class Saber 
 {
@@ -16,7 +15,7 @@ public class Saber
 			
 			print("Welcome to Saber");
 			
-			new Display("Saber!", 500, 500);
+			new Game("Saber!", 500, 500);
 			
 			while (true)
 			{
