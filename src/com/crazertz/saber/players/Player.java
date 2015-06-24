@@ -8,10 +8,4 @@ public class Player
 		System.out.println(stuff);
 	}
 	
-	
-	public static void pause()
-	{
-		 Thread.sleep(11, nanos);
-	}
-
 }
