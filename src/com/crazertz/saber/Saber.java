@@ -1,9 +1,6 @@
 package com.crazertz.saber;
 
-import java.util.Random;
-import javax.swing.JOptionPane;
-import java.util.Scanner;
-import javax.swing.JFrame;
+import com.crazertz.saber.display.Display;
 
 public class Saber 
 {
@@ -19,10 +16,12 @@ public class Saber
 			
 			print("Welcome to Saber");
 			
+			new Display("Saber!", 500, 500);
+			
 			while (true)
 			{
 				
-				print("happy");
+				print("running...");
 				Thread.sleep(1000);
 
 			}
