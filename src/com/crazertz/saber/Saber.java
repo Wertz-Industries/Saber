@@ -16,7 +16,11 @@ public class Saber
 		
 		public static void main(String[]args) 
 		{
-			print("Wellcom to Saber");	
+			print("Wellcom to Saber");
+			while(10 < 20)
+			{
+				print("happy");
+			}
 		}
 				
 }
