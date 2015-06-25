@@ -1,4 +1,5 @@
 package com.crazertz.saber;
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
@@ -20,7 +21,6 @@ public class Game implements Runnable
 	
 	private boolean running = false;
 	private Thread thread;
-	
 	
 	public Game(String title, int width, int height)
 	{
@@ -44,6 +44,21 @@ public class Game implements Runnable
 	{
 		bs = display.getCanvas().getBufferStrategy();
 		
+		if (bs == null)
+		{
+			display.getCanvas().createBufferStrategy(3);
+			return;
+		}
+		
+		g = bs.getDrawGraphics();
+		// Clear Screen
+		g.clearRect(0, 0, width, height);
+		// Draw here!
+
+		
+		// End drawing!
+		bs.show();
+		g.dispose();
 	}
 	
 	@Override
@@ -61,23 +76,27 @@ public class Game implements Runnable
 	
 	public synchronized void start()
 	{
-		if(running)
+		if (running)
 			return;
+		
 		running = true;
+		
 		thread = new Thread(this);
 		thread.start();
 	}
 	
 	public synchronized void stop()
 	{
-		// TODO: Fix this ...
-		if(running)
+		if (!running)
 			return;
+		
 		running = false;
+		
 		try
 		{
 			thread.join();
-		} catch(InterruptedException e)
+		} 
+		catch(InterruptedException e)
 		{
 			e.printStackTrace();
 		}
