@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 
 import com.crazertz.saber.display.Display;
 import com.crazertz.saber.gfx.ImageLoader;
+import com.crazertz.saber.gfx.SpriteSheet;
 
 public class Game implements Runnable
 {
@@ -25,6 +26,9 @@ public class Game implements Runnable
 	private Thread thread;
 	
 	private BufferedImage ship, marine;
+	private SpriteSheet sheet;
+	
+	private int x=0;
 	
 	public Game(String title, int width, int height)
 	{
@@ -40,7 +44,8 @@ public class Game implements Runnable
 		ship = ImageLoader.loadImage("/textures/fighter-000.png");
 		
 		marine = ImageLoader.loadImage("/textures/Space-Marine-Game-Sprite-Sheet.jpg");
-	}
+		sheet = new SpriteSheet(marine)
+;	}
 	
 	private void tick()
 	{
@@ -63,11 +68,22 @@ public class Game implements Runnable
 		// Draw here!
 
 		g.drawImage(ship, 50, 50, null);
-		g.drawImage(marine, 50, 200, null);
+		
+		
+		g.drawImage(sheet.crop((110 * (x%5))+20, (90 * ((x/5)%2))+10, 110, 90), 50, 200, null);
 		
 		// End drawing!
 		bs.show();
 		g.dispose();
+		
+		x = (x+1) % 10;
+		
+		// Slow things down:
+		try {
+			Thread.sleep(50);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	@Override
