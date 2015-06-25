@@ -18,7 +18,7 @@ public class Saber
 		{
 			
 			print("Welcome to Saber");
-			Game game = new Game("Saber!", 500, 500);
+			Game game = new Game("Saber!", 700, 700);
 			game.start();
 			while (true)
 			{

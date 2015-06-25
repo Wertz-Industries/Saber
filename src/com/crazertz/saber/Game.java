@@ -8,8 +8,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 
-
 import com.crazertz.saber.display.Display;
+import com.crazertz.saber.gfx.Assets;
 import com.crazertz.saber.gfx.ImageLoader;
 import com.crazertz.saber.gfx.SpriteSheet;
 
@@ -43,9 +43,9 @@ public class Game implements Runnable
 	{
 		display = new Display(title, width, height);
 		ship = ImageLoader.loadImage("/textures/fighter-000.png");
-		
-		marine = ImageLoader.loadImage("/textures/Space-Marine-Game-Sprite-Sheet.jpg");
-		sheet = new SpriteSheet(marine)
+		Assets.init();
+		//marine = ImageLoader.loadImage("/textures/Space-Marine-Game-Sprite-Sheet.jpg");
+		//sheet = new SpriteSheet(marine)
 ;	}
 	
 	private void tick()
@@ -69,9 +69,9 @@ public class Game implements Runnable
 		// Draw here!
 
 		g.drawImage(ship, (50+b)%width, 50, null);
+		g.drawImage(Assets.beam1, 10, 50, null);
 		
-		
-		g.drawImage(sheet.crop((110 * (a%5))+20, (90 * ((a/5)%2))+10, 110, 90), 50, 200, null);
+		//g.drawImage(sheet.crop((110 * (a%5))+20, (90 * ((a/5)%2))+10, 110, 90), 50, 200, null);
 		
 		// End drawing!
 		bs.show();
