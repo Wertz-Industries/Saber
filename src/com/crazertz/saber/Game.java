@@ -28,7 +28,8 @@ public class Game implements Runnable
 	private BufferedImage ship, marine;
 	private SpriteSheet sheet;
 	
-	private int x=0;
+	private int a=0;
+	private int b=0;
 	
 	public Game(String title, int width, int height)
 	{
@@ -67,16 +68,18 @@ public class Game implements Runnable
 		g.clearRect(0, 0, width, height);
 		// Draw here!
 
-		g.drawImage(ship, 50, 50, null);
+		g.drawImage(ship, (50+b)%width, 50, null);
 		
 		
-		g.drawImage(sheet.crop((110 * (x%5))+20, (90 * ((x/5)%2))+10, 110, 90), 50, 200, null);
+		g.drawImage(sheet.crop((110 * (a%5))+20, (90 * ((a/5)%2))+10, 110, 90), 50, 200, null);
 		
 		// End drawing!
 		bs.show();
 		g.dispose();
 		
-		x = (x+1) % 10;
+		a = (a+1) % 10;
+		b = (b+5) % width;
+		//System.out.println("b=" + b);
 		
 		// Slow things down:
 		try {
