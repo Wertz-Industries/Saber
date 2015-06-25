@@ -1,5 +1,9 @@
 package com.crazertz.saber.display;
 
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+
 import java.awt.Canvas;
 import java.awt.Dimension;
 
@@ -42,4 +46,10 @@ public class Display
 		frame.add(canvas);
 		frame.pack();
 	}
+	
+	public Canvas getCanvas()
+	{
+		return canvas;
+	}
+	
 }

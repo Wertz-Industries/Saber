@@ -1,5 +1,7 @@
 package com.crazertz.saber;
-
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JPanel;
 
 public class Saber 
 {
@@ -10,13 +12,14 @@ public class Saber
 		}
 		
 		
+		
+		
 		public static void main(String[]args) throws InterruptedException 
 		{
 			
 			print("Welcome to Saber");
-			
-			new Game("Saber!", 500, 500);
-			
+			Game game = new Game("Saber!", 500, 500);
+			game.start();
 			while (true)
 			{
 				
@@ -24,6 +27,8 @@ public class Saber
 				Thread.sleep(1000);
 
 			}
+			
+
 		}
 				
 }
